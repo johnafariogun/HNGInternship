@@ -18,7 +18,7 @@ def handle():
     slack_name = request.args.get('slack_name')
     track = request.args.get('track')
     utc_time = datetime.datetime.utcnow()
-    day = now.strftime('%A')
+    day = utc_time.strftime('%A')
     github_file = "https://github.com/johnafariogun/HNGInternship/blob/main/simpleApi/app.py"
     github_repo = "https://github.com/johnafariogun/HNGInternship"
     status_code = 200
