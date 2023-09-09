@@ -17,15 +17,15 @@ class Response:
 def handle():
     slack_name = request.args.get('slack_name')
     track = request.args.get('track')
-    now = datetime.datetime.utcnow()
+    utc_time = datetime.datetime.utcnow()
     day = now.strftime('%A')
-    github_file = "https://github.com/joey1123455/nzuri_server_week1/blob/main/api/index.go"
-    github_repo = "https://github.com/joey1123455/nzuri_server_week1"
+    github_file = "https://github.com/johnafariogun/HNGInternship/blob/main/simpleApi/app.py"
+    github_repo = "https://github.com/johnafariogun/HNGInternship"
     status_code = 200
     res = Response(
         slack_name,
         day,
-        now.strftime('%Y-%m-%dT%H:%M:%SZ'),
+        utc_time.strftime('%Y-%m-%dT%H:%M:%SZ'),
         track,
         github_file,
         github_repo,
