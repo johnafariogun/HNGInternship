@@ -7,7 +7,6 @@ exceptiongroup
 Flask
 Flask-SQLAlchemy
 greenlet
-gunicorn
 idnaniconfig
 itsdangerous
 Jinja2
@@ -21,3 +20,4 @@ tomli
 typing_extensions
 urllib3
 Werkzeug
+gunicorn
