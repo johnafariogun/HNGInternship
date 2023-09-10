@@ -7,7 +7,7 @@ exceptiongroup
 Flask
 Flask-SQLAlchemy
 greenlet
-idnaniconfig
+
 itsdangerous
 Jinja2
 MarkupSafe
