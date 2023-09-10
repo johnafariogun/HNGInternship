@@ -7,11 +7,9 @@ exceptiongroup
 Flask
 Flask-SQLAlchemy
 greenlet
-
 itsdangerous
 Jinja2
 MarkupSafe
-packagingpluggy
 pytest
 python-dotenv
 requests
