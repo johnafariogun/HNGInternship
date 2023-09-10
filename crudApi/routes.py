@@ -1,4 +1,4 @@
-from crudApi import app, db
+from . import app, db
 from .models import Person
 from flask import jsonify, request
 

@@ -1,4 +1,4 @@
-from crudApi import db
+from . import db
 
 # Define the Person model
 class Person(db.Model):

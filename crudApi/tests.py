@@ -1,5 +1,7 @@
 import requests
 import json
+import pytest
+
 
 # Set the base URL for your API
 BASE_URL = 'http://localhost:5000'
@@ -51,8 +53,6 @@ if __name__ == '__main__':
     print(response.json())
 
 
-import pytest
-import requests
 
 # Set the base URL for your API
 BASE_URL = 'http://localhost:5000'  # Update with your API's URL
