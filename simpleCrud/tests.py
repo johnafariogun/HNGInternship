@@ -4,7 +4,7 @@ import pytest
 
 
 # Set the base URL for your API
-BASE_URL = 'http://localhost:5000'
+BASE_URL = 'http://localhost:8000'
 
 # Function to send a POST request to create a new person
 def create_person(name, age, slack_username, track):
@@ -55,7 +55,7 @@ if __name__ == '__main__':
 
 
 # Set the base URL for your API
-BASE_URL = 'http://localhost:5000'  # Update with your API's URL
+# BASE_URL = 'http://localhost:5000'  # Update with your API's URL
 
 # Define test cases
 def test_create_person():
