@@ -37,5 +37,6 @@ tzdata
 uritemplate
 urllib3
 webencodings
+whitenoise
 xlrd
 xlwt
