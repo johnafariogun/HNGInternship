@@ -1,143 +1,133 @@
+# Django Rest Framework Person API
 
-# HngApi Documentation
+The Django Rest Framework Person API is a web application that provides CRUD (Create, Read, Update, Delete) operations for managing information about people. It is built using Django Rest Framework and provides the following endpoints:
 
-## Introduction
-
-Welcome to the documentation for my HngApi. This API provides a simple CRUD functionality i.e Create, Retrieve, Update, Delete functions on a Person object.
-
-## Table of Contents
-
-1. [Getting Started](#getting-started)
-2. [Installation](#installation)
-3. [Running Locally](#running-locally)
-4. [Interacting with the API](#interacting-with-the-api)
-5. [API Endpoints](#api-endpoints)
-6. [Authentication](#authentication)
-7. [Sample Requests](#sample-requests)
-8. [Error Handling](#error-handling)
+- `GET /api/`: Retrieve a list of all people in the database.
+- `POST /api/`: Add a new person to the database.
+- `GET /api/{id}/`: Retrieve a person's information based on their unique id.
+- `PUT /api/{id}/`: Update a person's data by their id.
+- `DELETE /api/{id}/`: Delete a person's data based on the entered id.
 
 ## Getting Started
 
-Before you begin, make sure you have python, a code editor and a browser installed on your pc.
+To run the Django Rest Framework Person API on your local machine, follow these steps:
 
-## Installation
+### Prerequisites
 
-To set up this project locally, follow these steps:
+- Python 3.7 or higher
+- pip (Python package manager)
+- svn
+- git
 
-1. Clone the repository from GitHub:
+### Installation
 
-   
-   git clone https://github.com/your-username/your-api-repo.git
+1. Clone this repository to your local machine(this command copies only the folder that the code is in to your local machine):
 
+   ```
+   svn export https://github.com/johnafariogun/HNGInternship/trunk/HngApi
+   ```
 
-2. Navigate to the project directory:
+2. Change to the project directory:
 
-   
-   cd your-api-repo
-
+    ```
+    cd your-repo
+    ```
 
 3. Create a virtual environment (optional but recommended):
 
-   
+   ```
    python -m venv venv
-
+   ```
 
 4. Activate the virtual environment:
 
    - On Windows:
 
-     
+     ```
      venv\Scripts\activate
-    
+     ```
 
    - On macOS and Linux:
 
-     
+     ```
      source venv/bin/activate
-    
+     ```
 
-5. Install project dependencies:
+5. Install the required Python packages:
 
-   
+   ```
    pip install -r requirements.txt
+   ```
 
+### Usage
 
-## Running Locally
+1. Start the Django development server:
 
-To run the HngApi locally, use the following command:
+   ```
+   python manage.py runserver
+   ```
 
+2. Access the API using the provided endpoints:
 
-python manage.py runserver
+- To retrieve a list of all people: GET: http://localhost:8000/api/persons/
+- To add a new person: POST: http://localhost:8000/api/persons/
+- To get a person by id: GET: http://localhost:8000/api/persons/{id}/
+- To update a person's data by id: PUT: http://localhost:8000/api/persons/{id}/
+- To delete a person by id: DELETE: http://localhost:8000/api/persons/{id}/
 
-The API will be accessible at `http://localhost:8000/`.
+## Example 1 (Adding a New Person)
 
-## Interacting with the API
+**Request:**
 
-You can interact with the API using various tools and libraries. Here are some common methods:
+POST: http://localhost:8000/api/persons/
 
-- **Using `curl`**:
+```json
+{
+    "name": "John Doe",
+    "track": "Backend",
+    "slack_username": "johndoe",
+    "email": "john@example.com"
+}
+```
 
-  
-  curl -X GET http://localhost:8000/api/endpoint
+**Response:**
 
-
-- **Using Python Requests**:
-
-python
-  import requests
-
-  response = requests.get('http://localhost:8000/api/endpoint')
-  data = response.json()
-
-
-- **Using a web browser or API client**:
-
-  Open your web browser or API client and navigate to `http://localhost:8000/api/endpoint`.
+```json
+{
+    "id": 3,
+    "name": "Daniel",
+    "track": "backend",
+    "slack_username": "danilo",
+    "created_at": "2023-09-14T22:13:21.670154Z",
+    "email": "danio@gmail.com"
+}
+```
 
 ## API Endpoints
 
-List and describe your API endpoints here.
+### GET /api/persons/
 
-- `GET /api/endpoint` - [Description of what this endpoint does]
-- `POST /api/endpoint` - [Description of what this endpoint does]
+Use this endpoint to retrieve a list of all people in the database.
 
-## Authentication
+### POST /api/persons/
 
-If your API requires authentication, provide details on how to obtain and use API keys, tokens, or other authentication methods.
+Use this endpoint to add a new person to the database. Send a POST request with JSON data containing the person's information, including fields like `name`, `track`, `slack_username`, and `email`.
 
-## Sample Requests
+### GET /api/persons/{id}/
 
-### Sample GET Request
+Retrieve a person's information based on their unique id. Replace `{id}` in the URL with the person's actual id.
 
+### PUT /api/persons/{id}/
 
-curl -X GET http://localhost:8000/api/endpoint
-Response:
-{
-  "message": "This is a sample GET response."
-}
+Update a person's data by their id. Replace `{id}` in the URL with the person's actual id. Send a PUT request with JSON data containing the updated information.
 
-### Sample POST Request
+### DELETE /api/persons/{id}/
 
+Delete a person's data based on the entered id. Replace `{id}` in the URL with the person's actual id.
 
-curl -X POST -H "Content-Type: application/json" -d '{"key": "value"}' http://localhost:8000/api/endpoint
+## Acknowledgments
 
-Response:
-{
-  "message": "This is a sample POST response."
-}
-
-# UML Class Diagram
-
-```plantuml
-@startuml
-
-class Person {
-  - name: String
-  - track: String
-  - slack_username: String
-  - created_at: DateTime
-  - email: Email
-}
-
-@enduml
-
+- Django Rest Framework: https://www.django-rest-framework.org/
+- Django: https://www.djangoproject.com/
+- Feel free to customize this README to include your specific project details, such as repository links, installation instructions, and any additional information about your project's usage, contributors, or deployment instructions.
+```

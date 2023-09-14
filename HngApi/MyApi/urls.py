@@ -18,7 +18,7 @@ schema_view = get_schema_view(
    permission_classes=[permissions.AllowAny],
 )
 urlpatterns = [
-    path('persons/', PersonListCreateView.as_view(), name='person-list-create'),
-    path('persons/<int:pk>/', PersonDetailView.as_view(), name='person-detail'),
-    path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('', PersonListCreateView.as_view(), name='person-list-create'),
+    path('<int:pk>/', PersonDetailView.as_view(), name='person-detail'),
+    path('docs', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
